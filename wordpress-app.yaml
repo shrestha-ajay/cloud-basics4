@@ -294,7 +294,7 @@ Resources:
             /tmp/setup.mysql: 
               content: !Sub |
                 CREATE DATABASE ${DBName};
-                CREATE USER '${DBUser}'@'localhost' IDENTIFIED BY '{{resolve:secretsmanager:wordpress-lab-db-password:SecretString}}';
+                CREATE USER '${DBUser}'@'localhost' IDENTIFIED BY '{{resolve:secretsmanager:wordpresslabdb-password:SecretString}}';
                 GRANT ALL ON ${DBName}.* TO '${DBUser}'@'localhost';
                 FLUSH PRIVILEGES;
               group: root
